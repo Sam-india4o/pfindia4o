@@ -195,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then((response) => {
+	console.log("ok");
         sendgreet();
         msg.style.display = "block";
 
