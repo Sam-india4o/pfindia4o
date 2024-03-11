@@ -6,8 +6,7 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
 
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbzGvb7iMgNfiFkfPo8vKa-AD5Bpm_tX4CqdTlcDIjvUciYkr2SrUoK6__5FwBL0PygJGQ/exec";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBImgU4VcZ0xNnOTptraxRrJDlq4pywZ5k",
   authDomain: "pdfdown-8e60f.firebaseapp.com",
@@ -99,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("state_next").addEventListener("click", function (e) {
     e.preventDefault();
-
+    console.log("state click");
     // Show loading spinner
     loadingSpinner.style.display = "inline-block";
 
@@ -186,33 +185,34 @@ document.addEventListener("DOMContentLoaded", function () {
       Subject: "Subscription added!",
       Body: emailbody,
     }).then((message) => console.log(message));
+    console.log("mailsnt");
     return;
   }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    console.log("form submit")
     loadingSpinner.style.display = "inline-block";
 
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then((response) => {
-	console.log("ok");
-        sendgreet();
-        msg.style.display = "block";
+    // You can remove the form submission logic here
 
-        loadingSpinner.style.display = "none";
-        mailSection.style.display = "none";
-        form.style.display = "none";
-        var list = document.querySelectorAll("#front_only");
-        for (var i = list.length - 1; 0 <= i; i--)
-          if (list[i] && list[i].parentElement) {
-            list[i].parentElement.removeChild(list[i]);
-          }
-        document.getElementById("checkout").innerHTML = "Here is your File!";
-        dwd.style.display = "block";
-      })
-      .catch((error) => {
-        console.error("Error!", error.message);
-      });
+    // Send greeting email
+    sendgreet();
+
+    
+
+    // Show success message
+    msg.style.display = "block";
+    loadingSpinner.style.display = "none";
+    mailSection.style.display = "none";
+    form.style.display = "none";
+    var list = document.querySelectorAll("#front_only");
+    for (var i = list.length - 1; 0 <= i; i--)
+      if (list[i] && list[i].parentElement) {
+        list[i].parentElement.removeChild(list[i]);
+      }
+    document.getElementById("checkout").innerHTML = "Here is your File!";
+    dwd.style.display = "block";
   });
 
   dwd.addEventListener("click", () => {
