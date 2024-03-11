@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PF for States</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:500,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <h3 id="checkout">Welcome</h3>
+      <h1 id="front_only">Check out <br />PF Penalty Statewise</h1>
+      <p id="front_only">Subscribe for more details</p>
+      <form name="submit-to-google-sheet">
+        <div class="name">
+          <input
+            type="name"
+            name="Name"
+            id="name"
+            placeholder="How Should We Call You?"
+            required
+          />
+          <button id="name_next">Next</button>
+        </div>
+        <div class="state">
+          <select name="State" id="state_select" required>
+            
+            
+          </select>
+          <button id="state_next">Next</button>
+        </div>
+        <div class="mail">
+          <input
+            type="email"
+            name="Email"
+            id="email"
+            placeholder="Your email id"
+            required
+          />
+          <button type="submit">
+            <img src="send-icon.png" width="30px" />
+          </button>
+        </div>
+      </form>
+      <div class="loading-spinner" id="loadingSpinner"></div>
+      <span id="scsmsg">Thank You For Subscribing !</span>
+      <button class="dwd" style="display: none;">Download</button>
+    </div>
+    <script type="module" src="server.js"></script>
+  </body>
+</html>
