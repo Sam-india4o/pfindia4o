@@ -7,6 +7,19 @@
 body{
     background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/background.jpg);
 }
+.wrapper {
+    
+    width: auto;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    color: aliceblue;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    padding: 50px 40px;
+}
 
 .hero{
     display: grid;
@@ -25,7 +38,7 @@ body{
     font-size: 40px;
 }
 .hero h3{
-    margin-top: 15%;
+    
     font-weight: 500;
     font-size: 40px;
 }
@@ -189,4 +202,29 @@ span{
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+.back-video{
+    position: fixed;
+   
+   width: 100%;
+  
+    object-fit: cover;
+}
+.back-video video {
+    min-width: 100%;
+    min-height: 100%;
+    
+    object-fit: cover;
+}
 
+@media(max-aspect-ratio:16/9){
+    .back-video{
+        width:auto;
+        height: 100%;
+    }
+}
+@media(min-aspect-ratio:16/9){
+    .back-video{
+        width:100%;
+        height:auto;
+    }
+}
