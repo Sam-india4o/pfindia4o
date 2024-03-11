@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("name_next").addEventListener("click", function (e) {
     e.preventDefault();
-
+    console.log("ok");
     // Show loading spinner
     loadingSpinner.style.display = "inline-block";
 
