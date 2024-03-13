@@ -215,7 +215,13 @@ span{
     
     object-fit: cover;
 }
-
+.skeleton {
+    background-color: #f0f0f0; /* Set a background color for the skeleton */
+    height: 20px; /* Set a height for the skeleton */
+    width: 100%; /* Set the width to 100% to span the entire container */
+    margin-bottom: 10px; /* Add some spacing between skeleton elements */
+  }
+  
 @media(max-aspect-ratio:16/9){
     .back-video{
         width:auto;
