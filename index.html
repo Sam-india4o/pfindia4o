@@ -6,6 +6,7 @@
     <title>PF for States</title>
     <link rel="icon" type="image/png" href="logo.png" />
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:500,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
 </head>
@@ -15,6 +16,7 @@
   </video>
     <div class="hero">
         <div class="wrapper">
+            <div class="skeleton"></div> <!-- Skeleton loading screen -->
             <h3 id="checkout">Welcome</h3>
             <h1 id="front_only">Check out <br />PF Penalty Statewise</h1>
             <p id="front_only">Subscribe for more details</p>
@@ -40,5 +42,12 @@
       </div>
     </div>
     <script type="module" src="server.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hide the skeleton after the page loads
+        document.querySelector('.skeleton').style.display = 'none';
+      });
+    </script>
 </body>
 </html>
