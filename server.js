@@ -5,7 +5,9 @@ import {
   ref,
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
-
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbzGvb7iMgNfiFkfPo8vKa-AD5Bpm_tX4CqdTlcDIjvUciYkr2SrUoK6__5FwBL0PygJGQ/exec";
 const firebaseConfig = {
